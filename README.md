@@ -20,7 +20,7 @@ MyAirline Reservation Management System is a web-based application for handling 
 1. Clone this repository:
    ```bash
    git clone clone https://github.com/kartiksharma14/airline_management_simulator.git
-   cd myairline-reservation
+   cd airline_management_simulator
    ```
 2. Create a MySQL database and update the credentials in `src/main/resources/application.properties`.
 3. Run the application:
