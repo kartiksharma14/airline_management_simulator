@@ -1,7 +1,7 @@
 // Sample data for demonstration
 const bookingData = {
     airplaneType: "Boeing 737",
-    departureTime: "2023-08-15 14:00",
+    departureTime: "2024-08-15 14:00",
     startPlace: "New York",
     destination: "Los Angeles",
     ticketCount: 3,
