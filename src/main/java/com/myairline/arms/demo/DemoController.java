@@ -39,11 +39,11 @@ public class DemoController {
         }
 
     @PostMapping("/index")
-    public String index(@RequestBody AuthenticationRequest request) {
+    public ResponseEntity<String> index(@RequestBody AuthenticationRequest request) {
         if (userService.checkUserRoleIsAdmin(request)) {
-            return "/Admin/dashboard";
+            return ResponseEntity.ok("/Admin/dashboard");
         } else {
-            return "/User/index";
+            return ResponseEntity.ok("/User/index");
         }
     }
 

@@ -148,7 +148,6 @@
             });
     }
     function redirectToProtectedPage(formData) {
-        // Check if the JWT token is available in localStorage
         const jwtToken = localStorage.getItem('jwtToken');
         if (jwtToken) {
             fetch('http://localhost:8080/api/v1/demo-controller/index', {
@@ -160,27 +159,18 @@
                 body: JSON.stringify(formData),
             })
                 .then(response => {
-                    if (response.ok) {
-                        // Redirect to the protected page
-
-                        return response.text();
-                    } else {
-                        // Handle other response statuses here, if needed
-                        console.error('Error:', response.status, response.statusText);
+                    if (!response.ok) {
+                        throw new Error('Network response was not ok');
                     }
+                    return response.text();
                 })
-                .then(htmlContent => {
-                    window.history.pushState({}, '', '/api/v1/demo-controller');
-                    // Render the HTML content in the current page
-                    document.body.innerHTML = htmlContent;
+                .then(redirectPath => {
+                    window.location.href = redirectPath;
                 })
                 .catch(error => {
                     console.error('Error:', error.message);
-                    // Handle errors here
                 });
-
         } else {
-            // If token is not available, redirect back to the login page
             localStorage.setItem('');
             window.location.href = 'http://localhost:8080/api/v1/auth/login';
         }
