@@ -31,3 +31,12 @@ MyAirline Reservation Management System is a web-based application for handling 
 
 ---
 This project showcases my exploration of Spring Boot and web development.
+### Searching for Flights
+
+After logging in, users can search for available flights by providing a start and end location:
+
+```http
+GET /api/v1/flights/search?start=COLOMBO&end=DUBAI
+```
+
+The endpoint returns a JSON list of matching flights with seat availability and distance information.

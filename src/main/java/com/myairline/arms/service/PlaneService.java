@@ -67,6 +67,11 @@ public class PlaneService {
         return modelMapper.map(airPlanes, new TypeToken<List<Planedto>>(){}.getType());
     }
 
+    public List<Planedto> searchPlanes(String start, String end) {
+        List<AirPlane> airPlanes = planeRepo.findAllByRoute(start, end);
+        return modelMapper.map(airPlanes, new TypeToken<List<Planedto>>(){}.getType());
+    }
+
     public ResponseEntity<String> deletePlaneById(int id) {
         Planedto existOne = getPlaneById(id);
         planeRepo.delete(modelMapper.map(existOne,AirPlane.class));
