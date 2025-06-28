@@ -21,7 +21,7 @@ The Airline Reservation Management System is a web-based application that stream
 
 ### Clone the Repository
 ```bash
-git clone https://github.com/ImeshaDilshani/Airline-Reservation-Management-System.git
+git clone https://github.com/kartiksharma14/airline_management_simulator.git
 cd Airline-Reservation-Management-System
 ```
 ### Database Setup
